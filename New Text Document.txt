@@ -1,0 +1,9 @@
+keytool -genkey -v -keystore easytrade.keystore -alias easytrade -keyalg RSA -keysize 2048 -validity 10000
+
+
+
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore  easytrade.keystore D:\MyProject\EasyTrade\platforms\android\build\outputs\apk\android-release-unsigned.apk easytrade 
+
+
+zipalign -v 4 D:\MyProject\EasyTrade\platforms\android\build\outputs\apk\android-release-unsigned.apk D:\MyProject\EasyTrade\platforms\android\build\outputs\apk\easyTrade.apk

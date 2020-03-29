@@ -1,0 +1,20 @@
+<ion-view view-title="فهرست">
+  <ion-content>
+    <ion-refresher
+      dir="rtl"
+      pulling-text="برای بارگذاری بکشید ..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="container">
+      <a ui-sref="app.intro" class="intro"><img src="img/intro.png" ></a>
+      <div  class="s1" >
+        <img ng-if="!s1Access" src="img/season1-locked.png" ng-click="buyS1()">
+        <a  ng-if="s1Access" ui-sref="app.seasonOne"> <img src="img/season1-Unlocked.png" ></a>
+      </div>
+      <div  class="s2" >
+        <img ng-if="!s2Access" src="img/season2-locked.png"  ng-click="buyS2()">
+        <a ng-if="s2Access" ui-sref="app.seasonTwo"><img  src="img/season2-Unlocked.png" ></a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
